@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float speed;
-    private Rigidbody rb;
     private int infectionRatio;
     public double hp;
     public Text hitpoints;
@@ -17,7 +15,6 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         infectionRatio = 0;
         hp = 100;
         hitpoints.text = "HP: " + hp;
@@ -29,24 +26,6 @@ public class Player : MonoBehaviour
     {
         hitpoints.text = "HP: " + hp;
         replaceBodyPart();
-    }
-
-    void FixedUpdate()
-    {
-        inputMovement();
-    }
-
-    void inputMovement()    //all the basic WASD movement for the player using forces.
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(movement * speed);
-        }
     }
 
     double HealthPoints() //returns hp as a double
@@ -79,7 +58,7 @@ public class Player : MonoBehaviour
             hp = hp - 10;
             HealthPoints();
         }
-        else if (other.tag == "Rare Monster")
+        /*else if (other.tag == "Rare Monster")
         {
             hp = hp - 20;
             HealthPoints();
@@ -98,6 +77,6 @@ public class Player : MonoBehaviour
         {
             hp = hp - 75;
             HealthPoints();
-        }
+        }*/
     }
 }

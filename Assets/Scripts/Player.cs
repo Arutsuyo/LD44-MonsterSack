@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//[RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
     private int infectionRatio;
@@ -10,7 +11,6 @@ public class Player : MonoBehaviour
     public Text hitpoints;
     public Text infectRat;
     public Text prompt;
-
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hitpoints.text = "HP: " + hp;
-        replaceBodyPart();
+        
+        
     }
 
     double HealthPoints() //returns hp as a double
@@ -80,3 +80,17 @@ public class Player : MonoBehaviour
         }*/
     }
 }
+
+    private CharacterController rb;
+    private Rigidbody rbb;
+    public float maxVel = 5.0f;
+    public Transform par;
+      rbb = GetComponent<Rigidbody>();
+      
+        par.position = rbb.position;
+        rbb.transform.localPosition = Vector3.zero;
+    void inputMovement()
+    {
+            //rb.SimpleMove(movement * speed * Time.deltaTime);
+            rbb.AddForce(movement * speed * Time.fixedDeltaTime, ForceMode.Impulse);
+        }

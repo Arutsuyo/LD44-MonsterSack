@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Chest : BodyPart
 {
-    // Start is called before the first frame update
-    void Start()
+    public Chest(double[] newStats) : base(newStats)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    new public ItemTypes GetItemType()
     {
-        
+        return ItemTypes.chest;
     }
 }

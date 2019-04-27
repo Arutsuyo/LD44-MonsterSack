@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         inputMovement();
     }
 
-    void inputMovement()
+    void inputMovement()    //all the basic WASD movement for the player using forces.
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -49,13 +49,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    double HealthPoints()
+    double HealthPoints() //returns hp as a double
     {
         return hp;
     }
-    void replaceBodyPart()
+    void replaceBodyPart()  //heals player.
     {
-        if(Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (hp < 100)
             {

@@ -64,7 +64,7 @@ public class Inventory : MonoBehaviour
                 if(leftRight)
                     e_LArm = (Arm)part;
                 else
-                    e_RArm = (Arm)part;=
+                    e_RArm = (Arm)part;
                 equip = true;
                 break;
 

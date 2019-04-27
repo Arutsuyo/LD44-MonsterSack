@@ -6,18 +6,17 @@ public class Inventory : MonoBehaviour
 {
     [Header("Item Management")]
     public List<BodyPart> CurrentEquipment;
-    public SortedList<BodyPart> Sack;
+
+    /// <summary>
+    /// This will 
+    /// </summary>
+    public List<Item> Sack;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /// <summary>
+    /// Players stats. These will be calculated every time parts are equip.
+    /// </summary>
+    public double[] stats;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

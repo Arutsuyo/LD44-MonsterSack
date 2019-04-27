@@ -5,10 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [Header("Item Management")]
-    public List<BodyPart> Heads;
-    public List<BodyPart> Chest;
-    public List<BodyPart> Arms;
-    public List<BodyPart> Legs;
+    public List<BodyPart> CurrentEquipment;
+    public SortedList<BodyPart> Sack;
+
 
     // Start is called before the first frame update
     void Start()

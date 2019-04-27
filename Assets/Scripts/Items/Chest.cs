@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chest : MonoBehaviour
+public class Chest : BodyPart
 {
     // Start is called before the first frame update
     void Start()

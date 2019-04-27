@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Inventory : MonoBehaviour
 {
     [Header("Item Management")]
@@ -23,6 +24,7 @@ public class Inventory : MonoBehaviour
     /// Players stats. These will be calculated every time parts are equip.
     /// </summary>
     public double[] stats;
+    public int CarryWeight;
 
     public bool PickupItem(Item itm)
     {
@@ -41,8 +43,15 @@ public class Inventory : MonoBehaviour
 
     public bool CheckCarryCapacity(int newWeight)
     {
-        throw new NotImplementedException();
-        return true;
+        int totalWeight = 0;
+        foreach(Item item in Sack)
+        {
+            totalWeight += item.weight;
+        }
+        if (totalWeight + newWeight <= CarryWeight)
+            return true;
+        else
+            return false;
     }
 
     public bool EquiptPart(BodyPart part, ItemTypes loc, bool leftRight = false)
@@ -77,17 +86,28 @@ public class Inventory : MonoBehaviour
                 break;
 
             default:
-                Debug.LogWarning("Item Cannot be equipt: " + part.name);
+                Debug.LogWarning("Item Cannot be equip: " + part.name);
                 break;
         }
-        CalculateStats();
+
+        if(equip)
+            CalculateStats();
 
         return equip;
     }
 
     public void CalculateStats()
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < stats.Length; i++)
+            stats[i] = 0;
+
+        for (int i = 0; i < stats.Length; i++)
+            stats[i] = e_Head.stats[i]
+            + e_Chest.stats[i]
+            + e_LArm.stats[i]
+            + e_RArm.stats[i]
+            + e_LLeg.stats[i]
+            + e_RLeg.stats[i];
     }
 
 }

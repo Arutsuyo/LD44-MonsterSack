@@ -1,16 +1,13 @@
-# Folders
-Library/
-Logs/
-[Ee]xported[Oo]bj/
-[Oo]bj/
-[Bb]uild/
+# ===========================
+# Default Collab Ignore Rules
+# ===========================
 
 # OS Generated
 # ============
-*.DS_Store
-*._*
-*.Spotlight-V100
-*.Trashes
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
 Icon?
 ehthumbs.db
 [Tt]humbs.db
@@ -18,6 +15,7 @@ ehthumbs.db
 
 # Visual Studio / MonoDevelop generated
 # =====================================
+[Ee]xported[Oo]bj/
 *.userprefs
 *.csproj
 *.pidb
@@ -29,5 +27,7 @@ ehthumbs.db
 
 # Unity generated
 # ===============
+[Oo]bj/
+[Bb]uild
 sysinfo.txt
 *.stackdump

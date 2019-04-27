@@ -47,6 +47,7 @@ public class BodyPart : Item
     
     public double speciesScalar;
 
+    // Default constructor for base
     public BodyPart(double[] newStats)
     {
         stats = newStats;

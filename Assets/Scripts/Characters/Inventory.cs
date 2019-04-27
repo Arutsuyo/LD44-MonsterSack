@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
             return false;
     }
 
-    public bool EquiptPart(BodyPart part, ItemTypes loc, bool leftRight = false)
+    public bool EquipPart(BodyPart part, ItemTypes loc, bool leftRight = false)
     {
         bool equip = false;
         switch(loc)

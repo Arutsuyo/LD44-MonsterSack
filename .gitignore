@@ -4,6 +4,8 @@ Logs/
 [Ee]xported[Oo]bj/
 [Oo]bj/
 [Bb]uild/
+.vs/
+[Tt]emp/
 
 # OS Generated
 # ============

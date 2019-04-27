@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Arm : BodyPart
 {
-    public bool LeftRight;
+    public Arm(double[] newStats) : base(newStats)
+    {
+
+    }
 
     new public ItemTypes GetItemType()
     {

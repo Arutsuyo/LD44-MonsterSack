@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Leg : BodyPart
 {
+    public Leg(double[] newStats) : base(newStats)
+    {
+
+    }
+
 
     new public ItemTypes GetItemType()
     {

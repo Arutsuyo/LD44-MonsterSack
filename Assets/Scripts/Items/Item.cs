@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Enum to specify item types. Whenever a new class is created, please addd its 
+// Enum to specify item types. Whenever a new class is created, please add its 
 // name to the enum.
 public enum ItemTypes
 {
@@ -46,6 +46,11 @@ public class BodyPart : Item
     public string species;
     
     public double speciesScalar;
+
+    public BodyPart(double[] newStats)
+    {
+        stats = newStats;
+    }
 
     new public ItemTypes GetItemType()
     {

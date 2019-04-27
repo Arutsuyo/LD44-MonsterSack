@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Common Monster
+  - Rare Monster
+  - Legendary Monster
+  - Epic Monster
+  - Chroma Monster
   layers:
   - Default
   - TransparentFX

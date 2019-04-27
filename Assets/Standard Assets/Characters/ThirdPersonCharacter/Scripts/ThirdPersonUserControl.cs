@@ -12,8 +12,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
+        private Rigidbody rbb;
+        public float maxVel = 5.0f;
+        public Transform par;
 
-        
         private void Start()
         {
             // get the transform of the main camera
@@ -30,6 +32,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
+            rbb = GetComponent<Rigidbody>();
         }
 
 
@@ -39,6 +42,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+            par.position = rbb.position;
+            rbb.transform.localPosition = Vector3.zero;
         }
 
 

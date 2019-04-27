@@ -62,6 +62,10 @@ public class Player : MonoBehaviour
                 prompt.text = "Limb repaired";
                 hp = hp + 25;
                 HealthPoints();
+                if (hp >= 80)
+                {
+                    hp = 100;
+                }
             }
             else
                 prompt.text = "MAX HEALTH";

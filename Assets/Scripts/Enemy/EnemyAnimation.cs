@@ -2,35 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class EnemyAnimation : MonoBehaviour
 {
-    Animator animate;
-    //EnemyDetection ed;
-    bool hit;
-    bool dead;
+    Animator animate;                                   //animator for enemy animations.
+    public bool isHit;                                  // checks if the player has been hit.
+    bool hit;                                           //checks if the enemy has been hit.
+    bool dead;                                          //checks if the enemy is dead.
+
     // Start is called before the first frame update
     void Start()
     {
         animate = GetComponentInParent<Animator>();
-        //ed = GetComponent<EnemyDetection>();
         hit = false;
         dead = false;
+        isHit = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+           
     }
 
     void OnTriggerEnter(Collider other)
     {
-            Debug.Log(other.gameObject);
-        if (other.tag == "Player")
+        if (other.tag == "Player")                          //checks to see if the player has entered the melee collider.
         {
             animate.SetBool("InMeleeRange", true);
+            isHit = true;
         }
         else if(hit == true)
         {
@@ -40,6 +39,7 @@ public class EnemyAnimation : MonoBehaviour
         {
             animate.SetTrigger("Dead");
         }
+        
     }
 
     void OnTriggerExit(Collider other)

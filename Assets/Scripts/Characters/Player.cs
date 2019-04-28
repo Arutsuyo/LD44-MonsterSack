@@ -6,15 +6,19 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [Header("Player Stats")]
+    [Header("Player Info")]
     public double hp;
     public int infectionRatio;
 
     [Header("UI Elements")]
+    public bool showInv = false;
     public Text hitpoints;
     public Text prompt;
     public Text dead;
     public Image fader;
+
+    [Header("Script References")]
+    public Inventory inv;
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +31,18 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //if (hp > 0)
-        //    TakeDamage(1);
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            showInv = !showInv;
+        }
     }
 
     // Replace a body part
     void replaceBodyPart()  
     {
+        if (showInv)
+            return;
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (hp < 100)

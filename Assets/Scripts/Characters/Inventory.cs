@@ -26,6 +26,9 @@ public class Inventory : MonoBehaviour
     public double[] stats;
     public int CarryWeight;
 
+    [Header("Script References")]
+    public Player player;
+
     [Header("UI References")]
     public TrashUI trashUI;
     public CharacterHealthUI charUI;
@@ -125,5 +128,14 @@ public class Inventory : MonoBehaviour
             + e_LLeg.stats[i]
             + e_RLeg.stats[i];
     }
+
+    private void OnGUI()
+    {
+        if (!player.showInv)
+            return;
+
+
+    }
+
 
 }

@@ -10,7 +10,7 @@ public class Twirl : MonoBehaviour
     private Quaternion origRot;
     public float updownSpeed = 0.01f;
     public float spinSpeed = 0.5f;
-
+    public Vector3 twirlDir = new Vector3(0, 1,0);
 
     private float updownPos = 0;
     private float spinPos = 0;
@@ -28,6 +28,6 @@ public class Twirl : MonoBehaviour
         spinPos += Time.deltaTime * spinSpeed;
 
         mesh.position = origPos + new Vector3(0, Mathf.Sin(updownPos * (2 * Mathf.PI)), 0);
-        mesh.rotation = origRot * Quaternion.Euler(0, spinPos * 360, 0);
+        mesh.rotation = origRot * Quaternion.Euler(twirlDir * spinPos * 360);
     }
 }

@@ -34,11 +34,11 @@ public class EnemyAnimation : MonoBehaviour
         }
         else if(hit == true)
         {
-            animate.SetBool("TakeDamage", true);
+            animate.SetTrigger("TakeDamage");
         }
         else if(dead == true)
         {
-            animate.SetBool("Dead", true);
+            animate.SetTrigger("Dead");
         }
     }
 

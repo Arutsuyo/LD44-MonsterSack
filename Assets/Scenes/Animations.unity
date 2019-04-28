@@ -126,19 +126,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1471559108}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &77592938
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77592936}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.01478673
-  m_Center: {x: 0, y: 0.005, z: 0}
 --- !u!4 &77592940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010692086626, guid: 9c8e6b52a146b2d4994f42592a19bba0,
@@ -844,8 +831,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1048610668}
-  - component: {fileID: 1048610670}
-  - component: {fileID: 1048610669}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -868,31 +853,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1048610669
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048610667}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 4.1477947
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1048610670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048610667}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0434f8f004238bc459f6aeb6fb5c4a48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1444484430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +996,7 @@ PrefabInstance:
         type: 3}
       propertyPath: meleeCollider
       value: 
-      objectReference: {fileID: 77592938}
+      objectReference: {fileID: 0}
     - target: {fileID: 890817185615543796, guid: 9c8e6b52a146b2d4994f42592a19bba0,
         type: 3}
       propertyPath: m_Enabled
@@ -1044,6 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4583655599528881742, guid: 9c8e6b52a146b2d4994f42592a19bba0, type: 3}
+    - {fileID: 890817185615543796, guid: 9c8e6b52a146b2d4994f42592a19bba0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c8e6b52a146b2d4994f42592a19bba0, type: 3}
 --- !u!1 &1503827678
 GameObject:

@@ -9,6 +9,8 @@ TagManager:
   - Legendary Monster
   - Epic Monster
   - Chroma Monster
+  - EnemyAttackScript
+  - PlayerScript
   layers:
   - Default
   - TransparentFX

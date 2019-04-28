@@ -5,20 +5,15 @@ using UnityEngine;
 //This script pretains to the box collider to attack the player
 //that is spawned from the enemy after the melee attack animation from the enemy.
 
-public class EnemyAttack : MonoBehaviour                        
+public class EnemyAttack : MonoBehaviour
 {
-    [Header ("Script References")]
-    public EnemyAnimation ea;
-    public Player player;
-
-    [Header ("Box Collider")]
+    public EnemyAnimation eAnim;
+    [Header("Box Collider")]
     public Collider attackCollider;                            //box collider for enemy to attack.
 
     // Start is called before the first frame update
     void Start()
     {
-        ea = GetComponent<EnemyAnimation>();
-        player = GetComponent<Player>();
         attackCollider = GetComponent<Collider>();
         attackCollider.enabled = false;
     }
@@ -26,24 +21,49 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ea.isHit == true)                                  //checks to see if the player has been hit.
-        {
-            attackCollider.enabled = true;
-            StartCoroutine(EnemyAttackDelay());            //if player is in the melee collider then start delay.
-            attackCollider.enabled = false;
-        }
+        
+    }
+
+    // Update is called once per frame
+    public void EnableTrigger()
+    {
+        Debug.Log("is hit Enemy Attack");
+        attackCollider.enabled = true;
+        Debug.Log("Collider Enabled");
+        StartCoroutine("EnemyAttackDelay");            //if player is in the melee collider then start delay.
     }
 
     IEnumerator EnemyAttackDelay()
     {
-        yield return new WaitForSeconds(0.5f);             //Waits for 0.5 secs.
+        yield return new WaitForSeconds(0.5f);
+        attackCollider.enabled = false;
+        Debug.Log("Collider Disabled");
+    }
+
+    IEnumerator WaitToAttack()
+    {
+        yield return new WaitForSeconds(1);
+    }
+
+    void repeatAttack()
+    {
+        do
+        {
+            StartCoroutine("WaitToAttack");
+            EnableTrigger();
+            StopCoroutine("WaitToAttack");
+        } while (eAnim.attAnimation == true);
+
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            player.TakeDamage(15);        //calls the Player script Take Damage function if player is in the spawned box collider.
+            other.gameObject.GetComponent<Player>().TakeDamage(15);
+            attackCollider.enabled = false;
+            StopCoroutine("EnemyAttackDelay");
+            Debug.Log("Collider Disabled");
         }
     }
 }

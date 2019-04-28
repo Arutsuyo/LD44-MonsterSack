@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyAnimation : MonoBehaviour
 {
-    Animator animate;                                   //animator for enemy animations.
-    public bool isHit;                                  // checks if the player has been hit.
+    public Animator animate;                                   //animator for enemy animations.
+    public EnemyAttack eAtt;
     bool hit;                                           //checks if the enemy has been hit.
     bool dead;                                          //checks if the enemy is dead.
+    public bool attAnimation;                                  //checks if the melee animation is running.
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class EnemyAnimation : MonoBehaviour
         animate = GetComponentInParent<Animator>();
         hit = false;
         dead = false;
-        isHit = false;
+        attAnimation = false;
     }
 
     // Update is called once per frame
@@ -28,8 +29,11 @@ public class EnemyAnimation : MonoBehaviour
     {
         if (other.tag == "Player")                          //checks to see if the player has entered the melee collider.
         {
+            Debug.Log("player entered");
             animate.SetBool("InMeleeRange", true);
-            isHit = true;
+            attAnimation = true;
+            eAtt.EnableTrigger();
+            Debug.Log("is hit Enemy Animation");
         }
         else if(hit == true)
         {

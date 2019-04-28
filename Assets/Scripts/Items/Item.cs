@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Enum to specify item types. Whenever a new class is created, please add its 
 // name to the enum.
@@ -15,6 +16,8 @@ public enum ItemTypes
 }
 public class Item : MonoBehaviour
 {
+
+    [Header("Item Stats")]
     /// <summary>
     /// Value is used when selling to the shop. Monster parts have 
     /// a positive weight, while human parts have a negative value.
@@ -23,9 +26,11 @@ public class Item : MonoBehaviour
     /// by default.
     /// </summary>
     public int value;
-    
     // Used to limit the number of items the player can carry.
     public int weight;
+
+    [Header("Reference Icon Image")]
+    public SpriteRenderer icon;
 
     public ItemTypes GetItemType()
     {

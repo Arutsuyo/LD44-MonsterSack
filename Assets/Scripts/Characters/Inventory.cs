@@ -26,14 +26,30 @@ public class Inventory : MonoBehaviour
     public double[] stats;
     public int CarryWeight;
 
+    [Header("UI References")]
+    public TrashUI trashUI;
+    public CharacterHealthUI charUI;
+    
+    public void Start()
+    {
+        trashUI.MaxSize = CarryWeight;
+        trashUI.CurSize = 0;
+        trashUI.UpdateUI();
+    }
     public bool PickupItem(Item itm)
     {
         if(CheckCarryCapacity(itm.weight))
         {
             Debug.Log("Picking up :" + itm.name);
-
+            
             Sack.Add(itm);
-
+            int totalWeight = 0;
+            foreach (Item item in Sack)
+            {
+                totalWeight += item.weight;
+            }
+            trashUI.CurSize = totalWeight;
+            trashUI.UpdateUI();
             return true;
         }
 

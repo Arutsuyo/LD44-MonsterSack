@@ -129,13 +129,4 @@ public class Inventory : MonoBehaviour
             + e_RLeg.stats[i];
     }
 
-    private void OnGUI()
-    {
-        if (!player.showInv)
-            return;
-
-
-    }
-
-
 }

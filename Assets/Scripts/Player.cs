@@ -27,8 +27,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (hp > 0)
-            TakeDamage(1);
+        //if (hp > 0)
+        //    TakeDamage(1);
     }
 
     // Replace a body part

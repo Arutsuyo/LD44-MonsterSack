@@ -1558,9 +1558,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  infectionRatio: 0
   hitpoints: {fileID: 0}
-  infectRat: {fileID: 0}
   prompt: {fileID: 0}
+  dead: {fileID: 0}
+  fader: {fileID: 0}
 --- !u!114 &11444856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,6 +1577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVel: 5
   par: {fileID: 0}
+  temp: 0
 --- !u!114 &11469404
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,17 +45,6 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1);
     }
 
-    void repeatAttack()
-    {
-        do
-        {
-            StartCoroutine("WaitToAttack");
-            EnableTrigger();
-            StopCoroutine("WaitToAttack");
-        } while (eAnim.attAnimation == true);
-
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

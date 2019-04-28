@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//[RequireComponent(typeof(CharacterController))]
+
 public class Player : MonoBehaviour
 {
-    private int infectionRatio;
+    [Header("Player Stats")]
     public double hp;
+    public int infectionRatio;
+
+    [Header("UI Elements")]
     public Text hitpoints;
-    public Text infectRat;
     public Text prompt;
+    public Text dead;
+    public Image fader;
 
     // Start is called before the first frame update
     void Start()
@@ -21,26 +25,22 @@ public class Player : MonoBehaviour
         prompt.text = "";
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-        
+        if (hp > 0)
+            TakeDamage(1);
     }
 
-    double HealthPoints() //returns hp as a double
-    {
-        return hp;
-    }
-    void replaceBodyPart()  //heals player.
+    // Replace a body part
+    void replaceBodyPart()  
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (hp < 100)
             {
-                prompt.text = "Limb repaired";
+                prompt.text = "Limb replaced";
                 hp = hp + 25;
-                HealthPoints();
+
                 if (hp >= 80)
                 {
                     hp = 100;
@@ -48,35 +48,39 @@ public class Player : MonoBehaviour
             }
             else
                 prompt.text = "MAX HEALTH";
+            StartCoroutine(ClearPrompt());
         }
     }
 
-    void OnTriggerEnter(Collider other) //when a monster touches you depending on the color is the amount of health you lose.
+    // Called by enemy script during their attack animation
+    public void TakeDamage(double damage)
     {
-        if(other.tag == "Common Monster")
+        hp -= damage;
+        if(hp <= 0)
         {
-            hp = hp - 10;
-            HealthPoints();
+            dead.gameObject.SetActive(true);
+            StartCoroutine(FadeToBlack());
         }
-        /*else if (other.tag == "Rare Monster")
+    }
+
+    public IEnumerator ClearPrompt()
+    {
+        yield return new WaitForSeconds(3.0f);
+        prompt.text = "";
+    }
+
+    public IEnumerator FadeToBlack()
+    {
+        float startTime = Time.time;
+        float curtime = 0;
+        while(Time.time - startTime < 3)
         {
-            hp = hp - 20;
-            HealthPoints();
+            curtime = Time.time - startTime;
+            fader.color = new Color(fader.color.r,
+                fader.color.g,
+                fader.color.b,
+                Mathf.Lerp(0.0f, 1, curtime / 3.0f));
+            yield return null;
         }
-        else if (other.tag == "Legendary Monster")
-        {
-            hp = hp - 35;
-            HealthPoints();
-        }
-        else if (other.tag == "Epic Monster")
-        {
-            hp = hp - 50;
-            HealthPoints();
-        }
-        else if (other.tag == "Chroma Monster")
-        {
-            hp = hp - 75;
-            HealthPoints();
-        }*/
     }
 }

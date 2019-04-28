@@ -1470,6 +1470,7 @@ GameObject:
   - component: {fileID: 5426510}
   - component: {fileID: 13615390}
   - component: {fileID: 5761782359877026230}
+  - component: {fileID: 8889962386107600517}
   - component: {fileID: 11444856}
   - component: {fileID: 11469404}
   m_Layer: 0
@@ -1559,10 +1560,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   infectionRatio: 0
+  showInv: 0
   hitpoints: {fileID: 0}
   prompt: {fileID: 0}
   dead: {fileID: 0}
   fader: {fileID: 0}
+  inv: {fileID: 8889962386107600517}
+--- !u!114 &8889962386107600517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77dd8698d5201ce47a2577aeeee549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  e_Head: {fileID: 0}
+  e_Chest: {fileID: 0}
+  e_LArm: {fileID: 0}
+  e_RArm: {fileID: 0}
+  e_LLeg: {fileID: 0}
+  e_RLeg: {fileID: 0}
+  Sack: []
+  stats: []
+  CarryWeight: 0
+  player: {fileID: 5761782359877026230}
+  trashUI: {fileID: 0}
+  charUI: {fileID: 0}
 --- !u!114 &11444856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,7 +1604,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVel: 5
   par: {fileID: 0}
-  temp: 0
 --- !u!114 &11469404
 MonoBehaviour:
   m_ObjectHideFlags: 0

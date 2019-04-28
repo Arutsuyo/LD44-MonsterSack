@@ -19,12 +19,12 @@ public class IconManager : MonoBehaviour
 
         for(int i = 0; i < inv.Sack.Count; i++)
         {
-            Image img = inv.Sack[i].icon;
-            img.rectTransform.position = new Vector3(
+            SpriteRenderer img = inv.Sack[i].icon;
+            img.size = new Vector2(width, height);
+            img.transform.position = new Vector3(
                 startx + i * width + i * gapx,
                 starty + i * height + i * gapy,
                 0);
-            img.rectTransform.sizeDelta = new Vector2(width, height);
             img.gameObject.SetActive(true);
         }
     }

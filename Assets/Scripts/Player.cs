@@ -80,17 +80,3 @@ public class Player : MonoBehaviour
         }*/
     }
 }
-
-    private CharacterController rb;
-    private Rigidbody rbb;
-    public float maxVel = 5.0f;
-    public Transform par;
-      rbb = GetComponent<Rigidbody>();
-      
-        par.position = rbb.position;
-        rbb.transform.localPosition = Vector3.zero;
-    void inputMovement()
-    {
-            //rb.SimpleMove(movement * speed * Time.deltaTime);
-            rbb.AddForce(movement * speed * Time.fixedDeltaTime, ForceMode.Impulse);
-        }

@@ -4819,9 +4819,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: hitpoints
+      value: 
+      objectReference: {fileID: 6167392831693423143}
     - target: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
         type: 3}
       propertyPath: prompt
@@ -4837,21 +4837,6 @@ PrefabInstance:
       propertyPath: fader
       value: 
       objectReference: {fileID: 7413860464231201844}
-    - target: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
-        type: 3}
-      propertyPath: hitpoints
-      value: 
-      objectReference: {fileID: 6167392831693423143}
-    - target: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
-        type: 3}
-      propertyPath: inv
-      value: 
-      objectReference: {fileID: 1168461394}
-    - target: {fileID: 983585116301545425, guid: 93ade9c346dde6e43bee11ee511051ed,
-        type: 3}
-      propertyPath: temp
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8572910595193070380, guid: 93ade9c346dde6e43bee11ee511051ed,
         type: 3}
       propertyPath: trashUI
@@ -9562,6 +9547,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4779326309085506591 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 1168461393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876add17ea8852d438922f48563eac73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5396715695673410736 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5396715695673410736, guid: aab8364c973a0de40a376a7f6c74dcdd,
@@ -9677,6 +9674,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1596306737118282737, guid: aab8364c973a0de40a376a7f6c74dcdd,
+        type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 1168461394}
+    - target: {fileID: 1596306737118282737, guid: aab8364c973a0de40a376a7f6c74dcdd,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 4779326309085506591}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aab8364c973a0de40a376a7f6c74dcdd, type: 3}
 --- !u!1001 &8227406166992845579

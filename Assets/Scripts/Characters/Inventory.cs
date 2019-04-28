@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     /// Players stats. These will be calculated every time parts are equip.
     /// </summary>
     public double[] stats;
-    public int CarryWeight;
+    public int CarryWeight = 24;
 
     [Header("Script References")]
     public Player player;

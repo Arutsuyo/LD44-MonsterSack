@@ -24,8 +24,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hitpoints.text = "HP: " + hp;
-        replaceBodyPart();
+        //hitpoints.text = "HP: " + hp;
+        //replaceBodyPart();
     }
 
     double HealthPoints() //returns hp as a double

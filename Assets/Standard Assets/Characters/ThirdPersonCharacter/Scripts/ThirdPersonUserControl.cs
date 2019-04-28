@@ -15,6 +15,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Rigidbody rbb;
         public float maxVel = 5.0f;
         public Transform par;
+        public bool temp = false;
 
         private void Start()
         {
@@ -42,8 +43,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
-            par.position = rbb.position;
-            rbb.transform.localPosition = Vector3.zero;
+            if (temp)
+            {
+                par.position = rbb.position;
+                rbb.transform.localPosition = Vector3.zero;
+            }
         }
 
 

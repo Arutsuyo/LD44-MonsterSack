@@ -530,6 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010692086626}
   - component: {fileID: 95000014196578838}
+  - component: {fileID: 890817185615543796}
   m_Layer: 0
   m_Name: Slime_Green
   m_TagString: Common Monster
@@ -572,6 +573,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &890817185615543796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012979649092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315fe234dbe79a64fb96004d5cede714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionCollider: {fileID: 0}
+  meleeCollider: {fileID: 0}
 --- !u!1 &1000013817168944
 GameObject:
   m_ObjectHideFlags: 0

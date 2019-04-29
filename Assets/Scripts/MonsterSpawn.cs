@@ -8,7 +8,7 @@ public class MonsterSpawn : MonoBehaviour
     public GameObject[] enemies;
     public Transform[] spawns;
 
-    public float spawnTime = 3f;
+    public float spawnTime = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +40,11 @@ public class MonsterSpawn : MonoBehaviour
     {
         for(int i = 0; i < 7; i++)
         {
-            if(spawns[i] == enemy)
+            if(spawns[i] != enemy)
             {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }

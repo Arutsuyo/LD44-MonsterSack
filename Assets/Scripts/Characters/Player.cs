@@ -97,8 +97,12 @@ public class Player : MonoBehaviour
         hp -= damage;
         if(hp <= 0)
         {
-            dead.gameObject.SetActive(true);
-            StartCoroutine(FadeToBlack());
+            // Make sure we're not dying twice
+            if(!dead.gameObject.activeSelf)
+            {
+                dead.gameObject.SetActive(true);
+                StartCoroutine(FadeToBlack());
+            }
         }
     }
 

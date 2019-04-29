@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [Header("Player Info")]
     public double hp;
     public int infectionRatio;
+    public bool attacked = false;
+    public float attackSpeed = 0.5f;
 
     [Header("UI Elements")]
     public bool showInv = false;
@@ -19,11 +21,13 @@ public class Player : MonoBehaviour
 
     [Header("Script References")]
     public Inventory inv;
+    public HingeJoint trashBag;
+    public GameObject trashHit;
 
     [Header("Audio Clips")]
     public AudioSource hitSound;
     public AudioClip[] hitSounds;
-
+    private JointMotor jm;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,7 @@ public class Player : MonoBehaviour
         hp = 100;
         hitpoints.text = "HP: " + hp;
         prompt.text = "";
+        jm = trashBag.motor;
     }
 
     private void Update()
@@ -40,8 +45,27 @@ public class Player : MonoBehaviour
             showInv = !showInv;
 
         }
+        if (Input.GetKeyDown(KeyCode.Space) && !attacked)
+        {
+            Debug.Log("ATACKKKKKKKK");
+            attacked = true;
+            trashHit.SetActive(true);
+            jm.targetVelocity = 20000;
+            jm.force = 3000;
+            trashBag.motor = jm;
+            StartCoroutine("AttackMe");
+        }
     }
-
+    IEnumerator AttackMe()
+    {
+        yield return new WaitForSeconds(0.25f);
+        jm.force = 0;
+        jm.targetVelocity = 0;
+        trashBag.motor = jm;
+        trashHit.SetActive(false);
+        yield return new WaitForSeconds(0.75f);
+        attacked = false;
+    }
     // Replace a body part
     void replaceBodyPart()  
     {

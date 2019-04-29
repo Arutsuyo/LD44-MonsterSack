@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &5113812206416122949
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708994851532565461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1 &3709684797599315594
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +143,7 @@ GameObject:
   - component: {fileID: 3709684798334738312}
   - component: {fileID: 3709684798334738313}
   m_Layer: 0
-  m_Name: EnemyHandler
+  m_Name: Rabbit_Cyan
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,6 +204,10 @@ MonoBehaviour:
   model: {fileID: 3708994851532565461}
   damagePerHit: 20
   swingTimer: 3
+  Health: 100
+  drops:
+  - {fileID: 3126327185473324442, guid: f6fc606f94156d94897f684acc93ce05, type: 3}
+  dropChance: 50
   nma: {fileID: 3709684798334738312}
   detectorObj: {fileID: 3709684798738498340}
   AttackRangeObj: {fileID: 3709684798249302459}

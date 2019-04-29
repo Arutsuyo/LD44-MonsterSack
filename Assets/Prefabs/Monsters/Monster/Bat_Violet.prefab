@@ -249,12 +249,31 @@ MonoBehaviour:
   model: {fileID: 5977332711749068811}
   damagePerHit: 20
   swingTimer: 3
+  Health: 40
+  drops:
+  - {fileID: 6082024223337709902, guid: ec1a0dceab78df942a3d591a587e51b7, type: 3}
+  - {fileID: 5496916420820497462, guid: 515b2506ec8cea1458db2935a09c91f0, type: 3}
+  dropChance: 25
   nma: {fileID: 5976362398435022099}
   detectorObj: {fileID: 5976362397762947519}
   AttackRangeObj: {fileID: 5976362398213272352}
   hitboxObj: {fileID: 5976362397018029073}
   trackingRange: 0
   meleeRange: 0
+--- !u!64 &1003320791975992221
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977332711749068811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &5976362398318473663
 PrefabInstance:
   m_ObjectHideFlags: 0

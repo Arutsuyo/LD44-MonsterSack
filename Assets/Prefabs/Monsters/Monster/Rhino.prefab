@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &33547677555325992
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561760009793507902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1 &5583275314113341826
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +146,10 @@ MonoBehaviour:
   model: {fileID: 4561760009793507902}
   damagePerHit: 20
   swingTimer: 3
+  Health: 160
+  drops:
+  - {fileID: 1370309708372828719, guid: 950fd8199d90d274e9edcfaebc6b2648, type: 3}
+  dropChance: 80
   nma: {fileID: 5583275314195632049}
   detectorObj: {fileID: 5583275314597303069}
   AttackRangeObj: {fileID: 5583275314113341826}

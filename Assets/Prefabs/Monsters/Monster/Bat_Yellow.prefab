@@ -163,7 +163,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.05
-  m_Speed: 3.5
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -187,9 +187,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315fe234dbe79a64fb96004d5cede714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1610505747497288501}
+  model: {fileID: 1610643729955352635}
   damagePerHit: 20
-  swingTimer: 3
+  swingTimer: 2
+  Health: 20
+  drops:
+  - {fileID: 5496916420820497462, guid: 515b2506ec8cea1458db2935a09c91f0, type: 3}
+  - {fileID: 6082024223337709902, guid: ec1a0dceab78df942a3d591a587e51b7, type: 3}
+  dropChance: 25
   nma: {fileID: 1610505747497288499}
   detectorObj: {fileID: 1610505747900931999}
   AttackRangeObj: {fileID: 1610505747315385600}
@@ -255,6 +260,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1610505747497288498}
   inRange: 0
+--- !u!64 &9136649617651324886
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610643729955352635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 59afa1f2c595d6343b15e945602e1f8f, type: 3}
 --- !u!1001 &1610505746384222735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,6 +331,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd1210210040d34e8810388185a6063, type: 3}
+--- !u!1 &1610643729955352635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013849561652, guid: 5fd1210210040d34e8810388185a6063,
+    type: 3}
+  m_PrefabInstance: {fileID: 1610505746384222735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1609930819105787535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011762660480, guid: 5fd1210210040d34e8810388185a6063,

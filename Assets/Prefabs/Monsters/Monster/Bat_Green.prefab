@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &4350557855810046912
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326545931830065448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1 &1327255663902754932
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +85,7 @@ GameObject:
   - component: {fileID: 1327255663955734087}
   - component: {fileID: 1327255663955734086}
   m_Layer: 0
-  m_Name: Bat_Green 1
+  m_Name: Bat_Green
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,6 +146,11 @@ MonoBehaviour:
   model: {fileID: 1326545931830065448}
   damagePerHit: 20
   swingTimer: 3
+  Health: 40
+  drops:
+  - {fileID: 6082024223337709902, guid: ec1a0dceab78df942a3d591a587e51b7, type: 3}
+  - {fileID: 5496916420820497462, guid: 515b2506ec8cea1458db2935a09c91f0, type: 3}
+  dropChance: 20
   nma: {fileID: 1327255663955734087}
   detectorObj: {fileID: 1327255664357405419}
   AttackRangeObj: {fileID: 1327255663902754932}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7050641583327157327}
   - component: {fileID: 7050641583327157326}
   m_Layer: 0
-  m_Name: EnemyHandler
+  m_Name: Rabbit_Green
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,6 +73,10 @@ MonoBehaviour:
   model: {fileID: 7051340331250694001}
   damagePerHit: 20
   swingTimer: 3
+  Health: 20
+  drops:
+  - {fileID: 3126327185473324442, guid: f6fc606f94156d94897f684acc93ce05, type: 3}
+  dropChance: 30
   nma: {fileID: 7050641583327157327}
   detectorObj: {fileID: 7050641583997255907}
   AttackRangeObj: {fileID: 7050641583412640380}
@@ -255,6 +259,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 7050641583327157326}
+--- !u!64 &249463649077543795
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051340331250694001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &7050641583942828611
 PrefabInstance:
   m_ObjectHideFlags: 0

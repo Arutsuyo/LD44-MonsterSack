@@ -5,10 +5,13 @@ using UnityEngine.AI;
 
 public class EnemyManager : MonoBehaviour
 {
-    [Header("Attach per enemy")]
+    [Header("Attack per enemy")]
     public GameObject model;
     public double damagePerHit = 20;
     public float swingTimer = 3f;
+    public float Health = 100f;
+    public GameObject[] drops;
+    public float dropChance = 50;
 
     [Header("Navigation")]
     public NavMeshAgent nma;
@@ -26,6 +29,33 @@ public class EnemyManager : MonoBehaviour
     private Animator animator;
     private GameObject playerGO;
     private Player playercs;
+    private bool dead = false;
+    public void Damage(float dmg)
+    {
+        Health -= dmg;
+        if (Health <= 0)
+        {
+            Health = 1000000;
+            if (drops.Length != 0) { 
+                if (Random.Range(0f, 100) < dropChance)
+                {
+                    Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
+
+                }
+            }
+            animator.SetBool("Dead", true);
+            Destroy(gameObject, 3f);
+            dead = true;
+            gameObject.GetComponent<EnemyManager>().enabled = false;
+            return;
+        }
+        if (dead)
+        {
+            return;
+        }
+        
+        animator.SetBool("TakeDamage", true);
+    }
 
     void Start()
     {
@@ -48,6 +78,10 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dead)
+        {
+            return;
+        }
         if (trackingRange)
         {
             nma.isStopped = false;
@@ -76,6 +110,7 @@ public class EnemyManager : MonoBehaviour
 
     public void OnDetectEnter(Collider other)
     {
+
         //checks to see if the player has entered the melee collider.
         trackingRange = true;
         playerGO = other.gameObject;

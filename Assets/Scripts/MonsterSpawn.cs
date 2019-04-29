@@ -28,6 +28,7 @@ public class MonsterSpawn : MonoBehaviour
         {
             int spawnIndex = Random.Range(0, spawns.Length);
             int enemyIndex = Random.Range(0, enemies.Length);
+            
             Instantiate(enemy, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
     }
@@ -36,11 +37,11 @@ public class MonsterSpawn : MonoBehaviour
     {
         for(int i = 0; i < 7; i++)
         {
-            if(spawns[i] == enemies[i])
+            if(spawns[i] == enemy)
             {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }

@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class levelController : MonoBehaviour
 {
-
     public string levelName;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
             SceneManager.LoadScene(levelName);
         }

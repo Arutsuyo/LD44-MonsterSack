@@ -4344,6 +4344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966273376}
+  - component: {fileID: 966273377}
   m_Layer: 0
   m_Name: EnemySpawnPoints
   m_TagString: Untagged
@@ -4373,6 +4374,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966273377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966273375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5e6520472d7a44b13c48653fe617a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawns:
+  - {fileID: 2074291442}
+  - {fileID: 546654884}
+  - {fileID: 744011891}
+  - {fileID: 640533993}
+  - {fileID: 1035596254}
+  - {fileID: 674135530}
+  - {fileID: 1594699162}
+  - {fileID: 755325475}
+  spawnTime: 5
 --- !u!1001 &970932493
 PrefabInstance:
   m_ObjectHideFlags: 0

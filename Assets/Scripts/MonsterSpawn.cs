@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//GDOG ;)
 public class MonsterSpawn : MonoBehaviour
 {
     GameObject enemy;
     public GameObject[] enemies;
     public Transform[] spawns;
 
-    public float spawnTime = 5f;
+    public float spawnTime = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +24,15 @@ public class MonsterSpawn : MonoBehaviour
 
     public void spawn()
     {
+        availibilty();
+
         if (availibilty() == true)
         {
             int spawnIndex = Random.Range(0, spawns.Length);
             int enemyIndex = Random.Range(0, enemies.Length);
-            
+            enemy = enemies[enemyIndex];
             Instantiate(enemy, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
+            Debug.Log("Enemy Spawned");
         }
     }
 

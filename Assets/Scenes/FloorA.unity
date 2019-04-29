@@ -8591,6 +8591,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74442f407a24ac84f95f08a83b1bb617, type: 3}
+--- !u!1 &1653695398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100012, guid: 856ddc11c4d1bd54885aa67f69f72cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089964066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653695399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653695398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928aa628ac0f344a69021773981ab645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: hub_temp
+--- !u!65 &1653695400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653695398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2844.9207, y: 4101.5786, z: 2970.096}
+  m_Center: {x: -243.6391, y: 1551.289, z: 987.5485}
 --- !u!1 &1670712709
 GameObject:
   m_ObjectHideFlags: 0

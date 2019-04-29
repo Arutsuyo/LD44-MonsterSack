@@ -195,6 +195,9 @@ MonoBehaviour:
   stats: []
   species: 
   speciesScalar: 0
+  ItemToAttach: {fileID: 3204615652585655515, guid: a42016117793dd34ab0e3d84e4075e46,
+    type: 3}
+  IsLeft: 1
 --- !u!114 &1592455997
 MonoBehaviour:
   m_ObjectHideFlags: 0

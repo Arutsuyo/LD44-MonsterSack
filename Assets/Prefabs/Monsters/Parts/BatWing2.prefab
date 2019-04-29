@@ -239,6 +239,9 @@ MonoBehaviour:
   stats: []
   species: 
   speciesScalar: 0
+  ItemToAttach: {fileID: 6915163007322514105, guid: 1f6c5e532af11984597529b5a83f4a7f,
+    type: 3}
+  IsLeft: 0
 --- !u!198 &200599019974080791
 ParticleSystem:
   m_ObjectHideFlags: 0

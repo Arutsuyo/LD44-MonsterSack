@@ -26,6 +26,15 @@ public class Inventory : MonoBehaviour
     public double[] stats;
     public int CarryWeight = 24;
 
+    [Header("Player Obj Reference")]
+    public GameObject LArmAttach;
+    public GameObject RArmAttach;
+    public GameObject HeadAttach;
+
+    private GameObject curLArm;
+    private GameObject curRArm;
+    private GameObject curHead;
+
     [Header("Script References")]
     public Player player;
 
@@ -59,7 +68,16 @@ public class Inventory : MonoBehaviour
         Debug.Log("Item " + itm.name + " is too heavy");
         return false;
     }
-
+    public void UpdateCarry()
+    {
+        int totalWeight = 0;
+        foreach (Item item in Sack)
+        {
+            totalWeight += item.weight;
+        }
+        trashUI.CurSize = totalWeight;
+        trashUI.UpdateUI();
+    }
     public bool CheckCarryCapacity(int newWeight)
     {
         int totalWeight = 0;
@@ -127,6 +145,58 @@ public class Inventory : MonoBehaviour
             + e_RArm.stats[i]
             + e_LLeg.stats[i]
             + e_RLeg.stats[i];
+
+
+        if(e_LArm!= null)
+        {
+            // Attach the e_Larm..
+            GameObject go = GameObject.Instantiate(e_LArm.ItemToAttach, LArmAttach.transform);
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localRotation = Quaternion.identity;
+            go.transform.localScale = Vector3.one;
+            if(curLArm == null || curLArm.Equals(null))
+            {
+                curLArm = go;
+            }
+            else
+            {
+                Destroy(curLArm);
+                curLArm = go;
+            }
+        }
+        if (e_RArm != null)
+        {
+            // Attach the e_Larm..
+            GameObject go = GameObject.Instantiate(e_RArm.ItemToAttach, RArmAttach.transform);
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localRotation = Quaternion.identity;
+            go.transform.localScale = Vector3.one;
+            if (curRArm == null || curRArm.Equals(null))
+            {
+                curRArm = go;
+            }
+            else
+            {
+                Destroy(curRArm);
+                curRArm = go;
+            }
+        }
+        if(e_Head != null)
+        {
+            GameObject go = GameObject.Instantiate(e_Head.ItemToAttach, HeadAttach.transform);
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localRotation = Quaternion.identity;
+            go.transform.localScale = Vector3.one;
+            if (curHead == null || curHead.Equals(null))
+            {
+                curHead = go;
+            }
+            else
+            {
+                Destroy(curHead);
+                curHead = go;
+            }
+        }
     }
 
 }

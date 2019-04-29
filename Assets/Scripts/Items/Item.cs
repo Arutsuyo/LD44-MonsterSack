@@ -52,6 +52,8 @@ public class BodyPart : Item
     
     public double speciesScalar;
 
+
+    public GameObject ItemToAttach;
     // Default constructor for base
     public BodyPart(double[] newStats)
     {

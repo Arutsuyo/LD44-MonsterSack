@@ -70,6 +70,8 @@ MonoBehaviour:
   stats: []
   species: 
   speciesScalar: 0
+  ItemToAttach: {fileID: 3096566149685995657, guid: 25f9f676c166e2542999bb8dcd538655,
+    type: 3}
 --- !u!199 &2959648902058966197
 ParticleSystemRenderer:
   serializedVersion: 6

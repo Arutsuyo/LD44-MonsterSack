@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Arm : BodyPart
 {
+
+    public bool IsLeft;
     public Arm(double[] newStats) : base(newStats)
     {
 

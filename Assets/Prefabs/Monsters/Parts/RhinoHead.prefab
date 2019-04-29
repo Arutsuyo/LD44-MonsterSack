@@ -4897,6 +4897,8 @@ MonoBehaviour:
   stats: []
   species: 
   speciesScalar: 0
+  ItemToAttach: {fileID: 3643036328185791986, guid: 9c308ff1e5ea0c8489ca81f457f2bad8,
+    type: 3}
 --- !u!1 &6928150847800721358
 GameObject:
   m_ObjectHideFlags: 0

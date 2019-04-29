@@ -20,6 +20,10 @@ public class Player : MonoBehaviour
     [Header("Script References")]
     public Inventory inv;
 
+    [Header("Audio Clips")]
+    public AudioSource hitSound;
+    public AudioClip[] hitSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +68,7 @@ public class Player : MonoBehaviour
     // Called by enemy script during their attack animation
     public void TakeDamage(double damage)
     {
+        hitSound.PlayOneShot(hitSounds[Random.Range(0, 4)]);
         hp -= damage;
         if(hp <= 0)
         {

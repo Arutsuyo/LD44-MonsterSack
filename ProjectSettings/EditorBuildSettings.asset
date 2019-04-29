@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FloorA.unity
+    guid: 5ec0ec93a5638b24f9bc32819c16bd98
   m_configObjects: {}

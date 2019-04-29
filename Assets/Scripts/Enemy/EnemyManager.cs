@@ -59,8 +59,10 @@ public class EnemyManager : MonoBehaviour
                     canSwing = false;
                     hitboxObj.SetActive(true);
                     animator.SetBool("InMeleeRange", true);
+                    
                 }
             }
+            
         }
         else
         {
@@ -79,6 +81,10 @@ public class EnemyManager : MonoBehaviour
         playerGO = other.gameObject;
         playercs = playerGO.GetComponent<Player>();
         animator.SetBool("InRange", true);
+        if (!meleeRange)
+        {
+            animator.Play("Chase Player");
+        }
     }
 
     public void OnDetectExit(Collider other)
@@ -90,6 +96,7 @@ public class EnemyManager : MonoBehaviour
     public void OnMeleeEnter(Collider other)
     {
         meleeRange = true;
+        animator.Play("Attack");
     }
 
     public void OnMeleeExit(Collider other)

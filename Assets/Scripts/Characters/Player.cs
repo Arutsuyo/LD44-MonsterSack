@@ -11,12 +11,12 @@ public class Player : MonoBehaviour
     public int infectionRatio;
     public bool attacked = false;
     public float attackSpeed = 0.5f;
+    private bool deathTriggered = false;
 
     [Header("UI Elements")]
     public bool showInv = false;
     public Text hitpoints;
     public Text prompt;
-    public Text dead;
     public Image fader;
 
     [Header("Script References")]
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        deathTriggered = false;
         infectionRatio = 0;
         hp = 100;
         hitpoints.text = "HP: " + hp;
@@ -67,7 +68,7 @@ public class Player : MonoBehaviour
         attacked = false;
     }
     // Replace a body part
-    void replaceBodyPart()  
+    void replaceBodyPart()
     {
         if (showInv)
             return;
@@ -95,14 +96,14 @@ public class Player : MonoBehaviour
     {
         hitSound.PlayOneShot(hitSounds[Random.Range(0, 4)]);
         hp -= damage;
-        if(hp <= 0)
+        if (hp <= 0)
         {
-            // Make sure we're not dying twice
-            if(!dead.gameObject.activeSelf)
+            if(!deathTriggered)
             {
-                dead.gameObject.SetActive(true);
+                deathTriggered = true;
                 StartCoroutine(FadeToBlack());
             }
+
         }
     }
 
@@ -116,7 +117,7 @@ public class Player : MonoBehaviour
     {
         float startTime = Time.time;
         float curtime = 0;
-        while(Time.time - startTime < 3)
+        while (Time.time - startTime < 3)
         {
             curtime = Time.time - startTime;
             fader.color = new Color(fader.color.r,

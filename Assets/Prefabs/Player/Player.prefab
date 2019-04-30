@@ -1410,8 +1410,8 @@ GameObject:
   - component: {fileID: 983585116307762359}
   - component: {fileID: 4779326309085506591}
   - component: {fileID: 8572910595193070380}
-  - component: {fileID: 983585116301545425}
-  - component: {fileID: 983585116301455349}
+  - component: {fileID: 3009655523099853675}
+  - component: {fileID: 2314534916171639696}
   - component: {fileID: 1820275521}
   m_Layer: 8
   m_Name: ThirdPersonController
@@ -1505,7 +1505,6 @@ MonoBehaviour:
   showInv: 0
   hitpoints: {fileID: 0}
   prompt: {fileID: 0}
-  dead: {fileID: 0}
   fader: {fileID: 0}
   inv: {fileID: 8572910595193070380}
   trashBag: {fileID: 0}
@@ -1544,7 +1543,7 @@ MonoBehaviour:
   player: {fileID: 4779326309085506591}
   trashUI: {fileID: 0}
   charUI: {fileID: 0}
---- !u!114 &983585116301545425
+--- !u!114 &3009655523099853675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1553,12 +1552,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 983585116295996599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
+  m_Script: {fileID: 11500000, guid: 75a93cc96c38faf4ba5056cb9dce5808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4779326309085506591}
   maxVel: 5
   par: {fileID: 983585115698940865}
---- !u!114 &983585116301455349
+--- !u!114 &2314534916171639696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1567,17 +1567,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 983585116295996599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
+  m_Script: {fileID: 11500000, guid: f6664e1af5aa69c408ad3aca0040a884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 6
+  m_JumpPower: 12
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.5
+  m_GroundCheckDistance: 0.1
 --- !u!82 &1820275521
 AudioSource:
   m_ObjectHideFlags: 0

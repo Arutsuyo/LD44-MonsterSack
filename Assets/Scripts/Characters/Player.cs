@@ -41,6 +41,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (deathTriggered)
+        {
+            if (hitSound.enabled)
+
+                hitSound.enabled = false;
+
+            showInv = false;
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             showInv = !showInv;
@@ -94,17 +104,14 @@ public class Player : MonoBehaviour
     // Called by enemy script during their attack animation
     public void TakeDamage(double damage)
     {
-        hitSound.PlayOneShot(hitSounds[Random.Range(0, 4)]);
         hp -= damage;
-        if (hp <= 0)
+        if (hp <= 0 && !deathTriggered)
         {
-            if(!deathTriggered)
-            {
-                deathTriggered = true;
-                StartCoroutine(FadeToBlack());
-            }
-
+            deathTriggered = true;
+            StartCoroutine(FadeToBlack());
         }
+        else
+            hitSound.PlayOneShot(hitSounds[Random.Range(0, 4)]);
     }
 
     public IEnumerator ClearPrompt()

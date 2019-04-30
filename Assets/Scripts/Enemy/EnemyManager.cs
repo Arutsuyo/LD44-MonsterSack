@@ -5,8 +5,10 @@ using UnityEngine.AI;
 
 public class EnemyManager : MonoBehaviour
 {
-    [Header("Attack per enemy")]
+    [Header("Attach enemy model here!")]
     public GameObject model;
+
+    [Header("Enemy info")]
     public double damagePerHit = 20;
     public float swingTimer = 3f;
     public float Health = 100f;
@@ -32,29 +34,22 @@ public class EnemyManager : MonoBehaviour
     private bool dead = false;
     public void Damage(float dmg)
     {
+        if (dead)
+            return;
+
         Health -= dmg;
         if (Health <= 0)
         {
-            Health = 1000000;
-            if (drops.Length != 0) { 
-                if (Random.Range(0f, 100) < dropChance)
-                {
-                    Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
+            // Check if it drops an item
+            if (drops.Length != 0 && Random.Range(0f, 100) < dropChance)
+                Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
 
-                }
-            }
-            animator.SetBool("Dead", true);
-            Destroy(gameObject, 3f);
             dead = true;
-            gameObject.GetComponent<EnemyManager>().enabled = false;
-            return;
+            animator.SetTrigger("Dead");
+            Destroy(gameObject, 3f);
         }
-        if (dead)
-        {
-            return;
-        }
-        
-        animator.SetBool("TakeDamage", true);
+        else
+            animator.SetTrigger("TakeDamage");
     }
 
     void Start()
@@ -79,24 +74,22 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         if (dead)
-        {
             return;
-        }
+
         if (trackingRange)
         {
             nma.isStopped = false;
             nma.SetDestination(playerGO.transform.position);
-            if(meleeRange)
+            if (meleeRange)
             {
                 if (canSwing)
                 {
                     canSwing = false;
                     hitboxObj.SetActive(true);
                     animator.SetBool("InMeleeRange", true);
-                    
                 }
             }
-            
+
         }
         else
         {
@@ -110,16 +103,11 @@ public class EnemyManager : MonoBehaviour
 
     public void OnDetectEnter(Collider other)
     {
-
         //checks to see if the player has entered the melee collider.
         trackingRange = true;
         playerGO = other.gameObject;
         playercs = playerGO.GetComponent<Player>();
         animator.SetBool("InRange", true);
-        if (!meleeRange)
-        {
-            animator.Play("Chase Player");
-        }
     }
 
     public void OnDetectExit(Collider other)
@@ -131,7 +119,6 @@ public class EnemyManager : MonoBehaviour
     public void OnMeleeEnter(Collider other)
     {
         meleeRange = true;
-        animator.Play("Attack");
     }
 
     public void OnMeleeExit(Collider other)
@@ -143,15 +130,15 @@ public class EnemyManager : MonoBehaviour
     public void OnHitEnter(Collider other)
     {
         hitboxObj.SetActive(false);
-        StartCoroutine(SwingDelay());
         animator.SetBool("InMeleeRange", false);
+        StartCoroutine(SwingDelay());
     }
 
     private IEnumerator SwingDelay()
     {
         yield return new WaitForSeconds(0.5f);
         playercs.TakeDamage(damagePerHit);
-        if(swingTimer - 0.5f > 0)
+        if (swingTimer - 0.5f > 0)
             yield return new WaitForSeconds(swingTimer - 0.5f);
         canSwing = true;
     }

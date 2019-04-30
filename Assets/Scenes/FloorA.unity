@@ -5265,7 +5265,7 @@ MonoBehaviour:
   - {fileID: 674135530}
   - {fileID: 1594699162}
   - {fileID: 755325475}
-  spawnTime: 0.5
+  spawnTime: 5
 --- !u!1001 &970932493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6765,7 +6765,7 @@ PrefabInstance:
     - target: {fileID: 983585115698940864, guid: 93ade9c346dde6e43bee11ee511051ed,
         type: 3}
       propertyPath: m_Name
-      value: Player 1
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
         type: 3}
@@ -6777,11 +6777,6 @@ PrefabInstance:
       propertyPath: prompt
       value: 
       objectReference: {fileID: 4261627857853106379}
-    - target: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
-        type: 3}
-      propertyPath: dead
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4779326309085506591, guid: 93ade9c346dde6e43bee11ee511051ed,
         type: 3}
       propertyPath: fader
@@ -6862,9 +6857,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 983585116301545425, guid: 93ade9c346dde6e43bee11ee511051ed, type: 3}
-    - {fileID: 983585116301455349, guid: 93ade9c346dde6e43bee11ee511051ed, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93ade9c346dde6e43bee11ee511051ed, type: 3}
 --- !u!114 &1168461394 stripped
 MonoBehaviour:
@@ -6904,13 +6897,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182960938}
-  m_LocalRotation: {x: -0.7061982, y: 0.035834577, z: 0.035834547, w: 0.7061982}
-  m_LocalPosition: {x: 29.06, y: -3.9800005, z: 8.75}
+  m_LocalRotation: {x: -0.7070451, y: 0.009342583, z: 0.009342557, w: 0.7070451}
+  m_LocalPosition: {x: 29.04, y: -3.9800005, z: 8.11}
   m_LocalScale: {x: 3.1149404, y: 1, z: 4.186778}
   m_Children: []
   m_Father: {fileID: 618500375}
   m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 5.8100004}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 1.514}
 --- !u!64 &1182960940
 MeshCollider:
   m_ObjectHideFlags: 0
